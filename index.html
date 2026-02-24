@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sébastien Saunier | Personal Website</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F9E',
+                        'primary-hover': '#234b7e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Open Sans', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+        .active-link {
+            color: #2C5F9E;
+            font-weight: 600;
+        }
+        .portfolio-page {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="w-full max-w-4xl mx-auto py-8 px-6 flex flex-col md:flex-row items-center justify-between border-b border-gray-100 mb-12">
+        <div class="flex items-center space-x-6 text-sm md:text-base mb-4 md:mb-0">
+            <a href="#" onclick="showPage('about')" id="nav-about" class="active-link hover:text-primary transition-colors cursor-pointer">About</a>
+            <a href="#" onclick="showPage('portfolio')" id="nav-portfolio" class="text-gray-500 hover:text-primary transition-colors cursor-pointer">Portfolio</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary transition-colors">Github</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary transition-colors">Linkedin</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="text-right hidden md:block">
+                <h2 class="text-sm font-bold text-gray-900 leading-tight">Sébastien Saunier</h2>
+                <p class="text-xs text-gray-500 italic">Co-founder of Le Wagon 🚌</p>
+            </div>
+            <div class="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
+                <img src="https://github.com/shadcn.png" alt="Sébastien Saunier" class="h-full w-full object-cover">
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Page -->
+    <main id="about-page" class="max-w-2xl mx-auto px-6 pb-20">
+        <div class="flex items-start justify-between mb-8">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Hello,</h1>
+                <p class="text-gray-400 italic">vous parlez français ?</p>
+            </div>
+            <button class="bg-[#2C5F9E] hover:bg-[#234b7e] text-white font-semibold py-2 px-6 rounded shadow-sm transition-colors">
+                Contact me
+            </button>
+        </div>
+
+        <div class="space-y-6 text-lg text-gray-700 leading-relaxed font-light">
+            <p>
+                I am <span class="font-semibold text-[#2C5F9E]">Sébastien Saunier</span>, and I can help you start your business, build your product, get your first customers and grow a technical team. As a non-technical founder, you struggle with translating your vision into working software. I can be your <span class="font-bold text-gray-900">interim CTO</span>.
+            </p>
+
+            <p>
+                On the product side, I will work with you using <span class="font-semibold text-[#2C5F9E]">Lean Startup</span> methodologies to reach the product/market fit. On the engineering side, I will layout the system architecture and get you on the right track with appropriate technology choices.
+            </p>
+
+            <p>
+                Depending on where you are, I can implement <span class="font-semibold text-gray-900">agile</span> (Scrum) and <span class="font-semibold text-gray-900">best practices</span> (TDD, Continous Integration) in your existing team or contractors. This is very important especially if you are feeling lost, not knowing who's doing what, and when features will be released.
+            </p>
+
+            <p>
+                My tool belt: <span class="font-semibold text-[#2C5F9E]">Ruby on Rails</span>, GitHub, a Macbook Pro, Sublime and a lot of command line.
+            </p>
+
+            <p>
+                Interested? Here's my <a href="#" class="text-[#2C5F9E] hover:underline">resume</a>, and <a href="#" class="text-[#2C5F9E] hover:underline">contact me</a>.
+            </p>
+        </div>
+    </main>
+
+    <!-- Portfolio Page -->
+    <main id="portfolio-page" class="portfolio-page max-w-4xl mx-auto px-6 pb-20">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8 font-serif">Portfolio</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <h3 class="font-serif text-xl text-[#2C5F9E] font-bold mb-1">Le Wagon</h3>
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Co-founder & CTO</p>
+                <p class="text-gray-700 mb-4 font-light leading-relaxed">
+                    Co-founded Le Wagon, a coding bootcamp for startups, creative people and tech skills.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Ruby on Rails</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">PostgreSQL</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">React</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <h3 class="font-serif text-xl text-[#2C5F9E] font-bold mb-1">Kitt</h3>
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Lead Developer</p>
+                <p class="text-gray-700 mb-4 font-light leading-relaxed">
+                    A platform for Le Wagon students and teachers to interact, share knowledge and manage the curriculum.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Ruby on Rails</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Redis</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Sidekiq</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <h3 class="font-serif text-xl text-[#2C5F9E] font-bold mb-1">Ondine</h3>
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Creator</p>
+                <p class="text-gray-700 mb-4 font-light leading-relaxed">
+                    A personal project exploring fluid dynamics and generative art in the browser.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">JavaScript</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Canvas API</span>
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">WebGL</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            const aboutPage = document.getElementById('about-page');
+            const portfolioPage = document.getElementById('portfolio-page');
+            const navAbout = document.getElementById('nav-about');
+            const navPortfolio = document.getElementById('nav-portfolio');
+
+            if (pageId === 'about') {
+                aboutPage.style.display = 'block';
+                portfolioPage.style.display = 'none';
+                navAbout.className = 'active-link hover:text-primary transition-colors cursor-pointer';
+                navPortfolio.className = 'text-gray-500 hover:text-primary transition-colors cursor-pointer';
+            } else {
+                aboutPage.style.display = 'none';
+                portfolioPage.style.display = 'block';
+                navAbout.className = 'text-gray-500 hover:text-primary transition-colors cursor-pointer';
+                navPortfolio.className = 'active-link hover:text-primary transition-colors cursor-pointer';
+            }
+        }
+    </script>
+</body>
+</html>
